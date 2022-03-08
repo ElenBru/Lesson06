@@ -1,0 +1,22 @@
+class Worker:
+    name: str
+    surname: str
+    position: str
+    _income: dict
+
+class Position(Worker):
+    def __init__(self, name: str, surname: str, _income: dict):
+        self.name = name
+        self.surname = surname
+        self._income = _income
+
+    def get_fullname(self):
+        print(f"Worker's fullname: {self.name} {self.surname}")
+
+    def get_total_income(self):
+        print(f"Worker's total income = {sum(self._income.values())}$")
+
+employee = Position("John", "Doe", {"wage": 50000, "bonus": 20000})
+
+employee.get_fullname()
+employee.get_total_income()
