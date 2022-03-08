@@ -1,0 +1,75 @@
+class Car:
+    speed: int
+    color: str
+    name: str
+    is_police: bool
+
+    def __init__(self, speed: int, color: str, name: str, is_police: bool):
+        self.speed = speed
+        self.color = color
+        self.name = name
+        self.is_police = is_police
+
+    def info(self):
+        print(f"Машина {self.name}, цвет {self.color}")
+
+    def go(self):
+        print(f"Машина начала движение")
+
+    def stop(self):
+        print(f"Машина остановилась")
+
+    def turn(self):
+        if isinstance(direction, right):
+            print("Машина повернула направо")
+        else:
+            print("Машина повернула налево")
+
+    def show_speed(self):
+        print(f"Скорость машины = {self.speed}")
+
+
+class TownCar(Car):
+
+    def __init__(self, speed: int, color: str, name: str, is_police: bool):
+        super().__init__(speed, color, name, is_police)
+
+    def show_speed(self):
+        if self.speed > 60:
+            print(f"Скорость машины = {self.speed}. Скорость превышена!!!")
+        else:
+            print(f"Скорость машины = {self.speed}")
+
+
+class SportCar(Car):
+    pass
+
+
+class WorkCar(Car):
+
+    def __init__(self, speed: int, color: str, name: str, is_police: bool):
+        super().__init__(speed, color, name, is_police)
+
+    def show_speed(self):
+        if self.speed > 40:
+            print(f"Скорость машины = {self.speed}. Скорость превышена!!!")
+        else:
+            print(f"Скорость машины = {self.speed}")
+
+
+class PoliceCar(Car):
+    pass
+
+
+towncar = TownCar(70, "Красный", "Опель", True)
+
+towncar.info()
+towncar.go()
+towncar.show_speed()
+towncar.stop()
+
+workcar = WorkCar(30, "Синий", "Мазда", True)
+workcar.info()
+workcar.go()
+workcar.show_speed()
+workcar.stop()
