@@ -1,0 +1,12 @@
+class Road:
+    _length: int
+    _width: int
+
+    def count(self):
+        self._length = int(input("Введите длину дороги, км: "))
+        self._width = int(input("Введите ширину дороги, км: "))
+        print(f'Масса асфальта = {self._length * self._width * 25 * 5} кг')
+
+
+Road = Road()
+Road.count()
