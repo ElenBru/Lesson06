@@ -1,0 +1,42 @@
+class Stationary:
+    title: str
+
+    def __init__(self, title: str):
+        self.title = title
+
+    def draw(self):
+        print(f"Запуск отрисовки")
+
+
+class Pen(Stationary):
+    def __init__(self, title: str):
+        super().__init__(title)
+
+    def draw(self):
+        print("Запуск отрисовки ручкой")
+
+
+class Pencil(Stationary):
+    def __init__(self, title: str):
+        super().__init__(title)
+
+    def draw(self):
+        print("Запуск отрисовки карандашом")
+
+
+class Handle(Stationary):
+    def __init__(self, title: str):
+        super().__init__(title)
+
+    def draw(self):
+        print("Запуск отрисовки маркером")
+
+
+pen = Pen("Ручка")
+pen.draw()
+
+pencil = Pencil("Карандаш")
+pencil.draw()
+
+handle = Handle("Маркер")
+handle.draw()
